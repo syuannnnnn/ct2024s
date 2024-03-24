@@ -197,25 +197,40 @@
           <th>總分</th>
           <th>完成後打勾</th>
           <th>配分</th>
+          <th>等級</th>
           <th>分項描述</th>
         </tr>
         <tr>
           <td rowspan="7" id="myTotal"></td>
           <td><input type="checkbox" class="flipswitch" id="myCheckbox1"></td>
           <td id='m1'>2</td>
-          <td>Simple baseline - 描述、描述、描述</td>
+          <td  rowspan="2">Simple baseline</td>
+          <td>下載並安裝 'Fira Code' 字體。</td>
         </tr>
         <tr>
           <td><input type="checkbox" class="flipswitch" id="myCheckbox2" checked></td>
-          <td id='m2'>6</td>
-          <td>Medium baseline - 描述、描述、描述 </td>
+          <td id='m2'>2</td>
+          <td>下載並安裝 DiaPro 字體。</td>
         </tr>
         <tr>
           <td><input type="checkbox" class="flipswitch" id="myCheckbox3"></td>
           <td id='m3'>2</td>
-          <td>Strong baseline - 描述、描述、描述 </td>
+          <td  rowspan="2">Medium baseline </td>
+          <td>設定 VS Code 使用 'Fira Code' 字體，並開啟連字功能。</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox4" checked></td>
+          <td id='m4'>2</td>
+          <td>設定 VS Code 使用 DiaPro 字體，並開啟連字功能。</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox5" checked></td>
+          <td id='m5'>2</td>
+          <td>Strong baseline</td>
+          <td>完成 HW01 作品集，寫100字心得，放到 github 你的 ct2024s 倉庫 hw01 檔案夾。</td>
         </tr>
       </table>
+
     </div>
   </div>
 
@@ -252,23 +267,25 @@
   update();
   
   function update(){
-
     var score = 0;
-
     if (d3.select("#myCheckbox1").property("checked")){
       score += parseInt(d3.select('#m1').html());
     }
-
     if (d3.select("#myCheckbox2").property("checked")){
       score += parseInt(d3.select('#m2').html());   
     }
-
     if (d3.select("#myCheckbox3").property("checked")){
       score += parseInt(d3.select('#m3').html());   
     }
-
+    if (d3.select("#myCheckbox4").property("checked")){
+      score += parseInt(d3.select('#m4').html());   
+    }
+    if (d3.select("#myCheckbox5").property("checked")){
+      score += parseInt(d3.select('#m5').html());   
+    }
     d3.select("#myTotal").html(score);    
   }
+
 </script>
 
 </body>
